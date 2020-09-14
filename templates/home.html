@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CovidCenters</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7654ab4b19.js" crossorigin="anonymous"></script>
+  <!-- CSS STYLESHEETS -->
+  <!-- googlefonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style media="screen">
+    body {
+      background-color: #F5F5F5;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      padding: 1rem 0 1rem;
+    }
+
+    .navbar-brand {
+      padding-left: 0.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    .navbar-brand:hover {
+      padding-left: 0.5rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #343a40;
+    }
+
+    .nav-item {
+      color: black;
+      padding: 0 0.25rem;
+    }
+
+    .nav-link {
+      font-size: 1.25rem;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+      color: #343a40;
+    }
+    .nav-link:hover {
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+      color: #343a40;
+    }
+    .search {
+      font-size: 1.25rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      background-color: #c6c8ca;
+      margin-bottom: 2rem;
+      margin-left: 10rem;
+      display: block;
+    }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width:80%;
+    }
+    .districts {
+      background-color: #343a40;
+      margin-left: 0;
+      padding: 1rem 1rem 1rem;
+      float: left;
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+
+    .list-group-item {
+      background-color: #343a40;
+      text-align: center;
+      color: #F5F5F5;
+      padding: 0.25rem 0.25rem 0.25rem;
+      margin-bottom: 1rem;
+      border: 0;
+      font-size: 1.25rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+    }
+
+    .list-group-item:hover {
+      padding: 0.25rem 0.25rem 0.25rem;
+      background-color: #343a40;
+      color: #F5F5F5;
+      text-align: center;
+      margin-bottom: 1rem;
+      border: 0;
+      font-size: 1.25rem;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+    }
+    /* footer */
+  #footer .container-fluid{
+    padding:1rem;
+  }
+  .white-section{
+    text-align: center;
+    background-color: #343a40;
+    color: #F5F5F5;
+    font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    }
+    @media screen and (min-width:1152px) {
+      .main {
+        justify-content: space-between;
+      }
+      .districts {
+        width: 50%;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <div class="container-fluid">
+    <div class="navbar navbar-expand-lg top-navbar">
+      <a class=" navbar-brand" href="">
+        COVID-19 Testing Centers
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:#f5f5f5;background-color: #343a40;font-size:28px;">
+          <i class="fas fa-bars" ></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id=navbarTogglerDemo02 >
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Covid Question&Answers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Get Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container-fluid">
+    <nav class="navbar navbar-light bg-light search">
+      <form class="form-inline" method="POST">
+        <input class="form-control mr-sm-2" list="count" name='area' type="search" placeholder="Search" aria-label="Search">
+        <datalist id="count">
+          {% for i in l1%}
+          <option value="{{i}}"></option>
+          {%endfor%}
+        </datalist>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav>
+  </div> -->
+  <!-- {% with messages=get_flashed_messages() %}
+{%if messages%}
+<p>{{messages[0]}}</p>
+{% endif %}
+{% endwith  %}
+  {%if p1%}
+  {%for p in p1%}
+  <div class="test-centers">
+  <div class="accordion" id="accordionExample">
+    <div class="card rounded">
+      <div class="card-header" id="{{p['_id']}}">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#{{p['area']}}" aria-expanded="true" aria-controls="collapseOne">
+            {{p['cen']}}
+          </button>
+        </h2>
+      </div>
+      <div id="{{p['area']}}" >
+        <div class="card-body">
+          <div>
+            <h4><i class="fas fa-hospital"></i> Address :</h4>
+            <h6>{{p['add']}}</h6>
+            <a href='{{p['loc']}}'>
+              <button type="button" class="btn btn-primary"><i class="fas fa-directions"></i> Get Directions</button>
+            </a>
+          </div>
+          <br>
+          <div>
+            <iframe
+              src="{{p['emb_link']}}"
+              width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {%endfor%}
+  {%endif%} -->
+  <div class="container-fluid">
+    <!-- <h3>Mapview with Test center Locations</h3> -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn search" data-toggle="modal" data-target="#exampleModal">
+      <div>
+        <i class="fas fa-search-location" style="margin-right: 1rem;"></i>
+        Search By District
+      </div>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="col-6 modal-title text-center" id="exampleModalLabel">Select Your District</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span  aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
+              <a href="#" class="list-group-item list-group-item-action">Warangal Urban</a>
+              <a href="#" class="list-group-item list-group-item-action">Warangal Rural</a>
+              <a href="#" class="list-group-item list-group-item-action">Jagityal</a>
+              <a href="#" class="list-group-item list-group-item-action">Hyderabad</a>
+              <a href="#" class="list-group-item list-group-item-action">Mulugu</a>
+              <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
+              <a href="#" class="list-group-item list-group-item-action">Khammam</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;margin-bottom: 3rem;">
+      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://www.google.co.in/maps/d/u/0/embed?mid=19ks4dONt2QB3Oh5uAO-fceUvKnDPNPJg" height="525" width="75%"></iframe>
+    </div>
+  </div>
+  <div style="text-align: center; margin-bottom: 1rem; font-size: 1.25rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
+    <h4>View District-wise Testing Centers</h4>
+  </div>
+  <div class="container-fluid main">
+    <div class="list-group list-group-horizontal flex-fill districts">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <a href="/mlg" class="list-group-item list-group-item-action">Mulugu</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="/kba" class="list-group-item list-group-item-action">Komarambheem Asifabad</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="khm" class="list-group-item list-group-item-action">Khammam</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Mulugu</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Komarambheem Asifabad</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Khammam</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Kamareddy</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Kamareddy</a>
+        </div>
+        <div class="col-lg-3  col-md-6">
+          <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+<footer  class="white-section" id="footer">
+  <div class="container-fluid">
+    <h3>Helpline Number :  <i class="fas fa-phone-alt"></i> 104</h3>
+  </div>
+
+</footer>
+
+</body>
+
+</html>

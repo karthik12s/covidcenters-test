@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CovidCenters</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7654ab4b19.js" crossorigin="anonymous"></script>
+  <!-- CSS STYLESHEETS -->
+  <!-- googlefonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style media="screen">
+  body {
+    background-color: #F5F5F5;
+  }
+  /* Navigation Bar */
+  .navbar {
+    padding: 1rem 0 1rem;
+  }
+  .navbar-brand {
+    padding-left: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343a40;
+  }
+  .navbar-brand:hover{
+    padding-left: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343a40;
+  }
+  .nav-item {
+    color: black;
+    padding: 0 0.25rem;
+  }
+  .nav-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #343a40;
+  }
+  .nav-link:hover{
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: #343a40;
+  }
+  .navbar-collapse{
+    color: #343a40;
+  }
+  .search{
+    margin-bottom: 2rem;
+  }
+  .test-centers{
+    background-color: #343a40;
+    width:85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card{
+    background-color:#343a40;
+    color:#f5f5f5;
+    border:0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin:0 0 0;
+    padding:0 0 0;
+  }
+  .card-header{
+    padding:0 0 0;
+    margin:0 0 0;
+  }
+  .center-name:hover{
+    font-weight: 700;
+    color:#f5f5f5;
+    text-decoration: none;
+  }
+  .center-name{
+    font-size: 1.25rem;
+    color:#f5f5f5;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding:0.6rem 0 0.6rem;
+    margin:0 0 0;
+  }
+
+  #map{
+    width:85%;
+  height:400px;
+  }
+  @media screen and (min-width:1152px){
+  .test-centers{
+   width:75%;
+   margin-left: auto;
+   margin-right: auto;
+
+  }
+  #map{
+    width:75%;
+    text-align:center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    height:"525px";
+  }
+  }
+
+  </style>
+  <!-- googlefonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <div class="container-fluid">
+    <div class="navbar navbar-expand-lg top-navbar">
+      <a class=" navbar-brand" href="">
+        COVID-19 Testing Centers
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id=navbarTogglerDemo02>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Covid Question&Answers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Get Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--Grid column-->
+  <!-- <form class="form-inline"  method="POST">
+<input class="form-control mr-sm-2" list='count' name='area' type="search" placeholder="Choose Area" aria-label="Search">
+<datalist id="count">
+  {% for i in l1%}
+  <option value="{{i}}"></option>
+  {%endfor%}
+</datalist>
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+{%if p1%}
+{%for p in p1%}
+<div class="test-centers">
+<div class="accordion" id="accordionExample">
+  <div class="card rounded">
+    <div class="card-header" id="{{p['_id']}}">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#{{p['area']}}" aria-expanded="true" aria-controls="collapseOne">
+          {{p['cen']}}
+        </button>
+      </h2>
+    </div>
+    <div id="{{p['area']}}" >
+      <div class="card-body">
+        <div>
+          <h4><i class="fas fa-hospital"></i> Address :</h4>
+          <h6>{{p['add']}}</h6>
+          <a href='{{p['loc']}}'>
+            <button type="button" class="btn btn-primary"><i class="fas fa-directions"></i> Get Directions</button>
+          </a>
+        </div>
+        <br>
+        <div>
+          <iframe
+            src="{{p['emb_link']}}"
+            width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{%endfor%}
+{%endif%} -->
+        <!--Grid column-->
+<div style="text-align: center; margin-bottom: 1rem; font-size: 1.25rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
+  <h4>Map of Test Centers in Hyderabad District</h4>
+</div>
+  <div style="text-align: center;">
+    <!-- <h3>District Mapview with Test center Locations</h3> -->
+    <iframe id='map' src="https://www.google.co.in/maps/d/u/0/embed?mid=1uLBUUsPkfTcaHjx7fzw_-NMhyno1Suef" ></iframe>
+  </div>
+  <div style="text-align: center; margin-bottom: 1rem; font-size: 1.25rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
+    <h4>List of all Test Centers in {{di}} District</h4>
+  </div>
+
+  <div class="container-fluid">
+    <div class="test-centers" >
+    <div class="accordion" id="accordionExample">
+      {%for a1 in a%}
+      <div class="card">
+        <div class="card-header" id="{{a1['_id']}}">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block  center-name" type="button" data-toggle="collapse" data-target="#{{a1['area']}}" aria-expanded="true" aria-controls="collapseOne">
+                <i class="fas fa-angle-down"></i>   {{a1['cen']}}
+            </button>
+          </h2>
+        </div>
+        <div id="{{a1['area']}}" class="collapse" aria-labelledby="{{a1['_id']}}" data-parent="#accordionExample">
+          <div class="card-body">
+            <div>
+              <h4><i class="fas fa-hospital"></i> Address :</h4>
+              <h6>{{a1['add']}}</h6>
+              <a href='{{a1['loc']}}'>
+                <button type="button" class="btn" style="background-color: #c6c8ca; color:#343a40; font-weight: 700;"><i class="fas fa-directions"></i> Get Directions</button>
+              </a>
+            </div>
+            <br>
+            <div>
+              <iframe
+                src="{{a1['emb_link']}}"
+                width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+  <!-- <div class="poster">
+    <img src="https://5.imimg.com/data5/AR/ME/SZ/SELLER-2452310/covid-19-poster-500x500.jpeg" alt="COVID 19 Poster">
+  </div> -->
+</div>
+
+</body>
+</html>
