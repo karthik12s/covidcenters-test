@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 flask = "*"
-pymongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
 gunicorn = "*"
 
 [requires]
