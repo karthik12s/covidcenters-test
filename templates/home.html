@@ -20,6 +20,11 @@
     body {
       background-color: #F5F5F5;
     }
+    h4{
+      font-size:1rem;
+      font-weight: 700;
+      font-family: 'Roboto', sans-serif;
+    }
 
     /* Navigation Bar */
     .navbar {
@@ -29,7 +34,7 @@
     .navbar-brand {
       padding-left: 0.5rem;
       font-family: 'Roboto', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: #343a40;
     }
@@ -48,7 +53,7 @@
     }
 
     .nav-link {
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: 500;
       font-family: 'Roboto', sans-serif;
       color: #343a40;
@@ -60,19 +65,27 @@
       color: #343a40;
     }
     .search {
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
       background-color: #c6c8ca;
-      margin-bottom: 2rem;
-      margin-left: 10rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;
       display: block;
     }
+    #map{
+      text-align:center;
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+      width:95%;
+      height:400px;
+    }
+
     .main {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width:80%;
+      width:95%;
     }
     .districts {
       background-color: #343a40;
@@ -94,6 +107,18 @@
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
     }
+    .modal-content{
+      background-color: #343a40;
+    }
+    .modal-title{
+      color:#f5f5f5;
+    }
+    .close{
+      color:#f5f5f5;
+    }
+    .close:hover{
+      color:#f5f5f5;
+    }
 
     .list-group-item:hover {
       padding: 0.25rem 0.25rem 0.25rem;
@@ -110,7 +135,7 @@
   #footer .container-fluid{
     padding:1rem;
   }
-  .white-section{
+  .footer-section{
     text-align: center;
     background-color: #343a40;
     color: #F5F5F5;
@@ -119,7 +144,26 @@
     font-weight: 700;
     }
     @media screen and (min-width:1152px) {
+      h4{
+        font-size:1.5rem;
+        font-weight: 700;
+      }
+      .navbar-brand{
+        font-size:1.5rem;
+      }
+      .nav-link{
+        font-size: 1.25rem;
+      }
+      .search{
+        font-size: 1.25rem;
+        margin-left: 10rem;
+      }
+      #map{
+        width:75%;
+        height:525px;
+      }
       .main {
+        width:80%;
         justify-content: space-between;
       }
       .districts {
@@ -134,13 +178,12 @@
 <body>
   <!-- Nav Bar -->
   <div class="container-fluid">
-    <div class="navbar navbar-expand-lg top-navbar">
+    <div class="navbar navbar-expand-lg top-navbar ">
       <a class=" navbar-brand" href="">
         COVID-19 Testing Centers
       </a>
-      <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" style="color:#f5f5f5;background-color: #343a40;font-size:28px;">
-          <i class="fas fa-bars" ></i>
+      <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
         </span>
       </button>
 
@@ -217,7 +260,7 @@
     <!-- Button trigger modal -->
     <button type="button" class="btn search" data-toggle="modal" data-target="#exampleModal">
       <div>
-        <i class="fas fa-search-location" style="margin-right: 1rem;"></i>
+        <i class="fas fa-search-location" style="margin-right: 0.5rem;"></i>
         Search By District
       </div>
     </button>
@@ -234,24 +277,24 @@
           </div>
           <div class="modal-body">
             <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
-              <a href="#" class="list-group-item list-group-item-action">Warangal Urban</a>
-              <a href="#" class="list-group-item list-group-item-action">Warangal Rural</a>
-              <a href="#" class="list-group-item list-group-item-action">Jagityal</a>
-              <a href="#" class="list-group-item list-group-item-action">Hyderabad</a>
-              <a href="#" class="list-group-item list-group-item-action">Mulugu</a>
-              <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
-              <a href="#" class="list-group-item list-group-item-action">Khammam</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Karimnagar</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Warangal Urban</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Warangal Rural</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Jagityal</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Hyderabad</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Mulugu</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Jogulamba Gadwal</a>
+              <a href="#" class="list-group-item list-group-item-action select-district">Khammam</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div style="text-align: center;margin-bottom: 3rem;">
-      <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://www.google.co.in/maps/d/u/0/embed?mid=19ks4dONt2QB3Oh5uAO-fceUvKnDPNPJg" height="525" width="75%"></iframe>
+    <div style="text-align: center;">
+      <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://www.google.co.in/maps/d/u/0/embed?mid=19ks4dONt2QB3Oh5uAO-fceUvKnDPNPJg"></iframe>
     </div>
   </div>
-  <div style="text-align: center; margin-bottom: 1rem; font-size: 1.25rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
+  <div style="text-align: center; margin-bottom: 1rem; font-size: 1.5rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
     <h4>View District-wise Testing Centers</h4>
   </div>
   <div class="container-fluid main">
@@ -299,9 +342,9 @@
 
   <!-- Footer -->
 
-<footer  class="white-section" id="footer">
+<footer  class="footer-section" id="footer">
   <div class="container-fluid">
-    <h3>Helpline Number :  <i class="fas fa-phone-alt"></i> 104</h3>
+    <h4>Helpline Number :  <i class="fas fa-phone-alt"></i> 104</h4>
   </div>
 
 </footer>
