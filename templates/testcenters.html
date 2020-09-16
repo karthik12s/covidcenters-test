@@ -63,7 +63,7 @@
   }
   .test-centers{
     background-color: #343a40;
-    width:85%;
+    width:95%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0.25rem;
@@ -115,6 +115,9 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   }
+  .map{
+    width: 100%;
+  }
   @media screen and (min-width:1152px){
     .navbar-brand{
       font-size:1.5rem;
@@ -136,6 +139,9 @@
     margin-bottom: 1.5rem;
     margin-top: 0.5rem;
     height:525px;
+  }
+  .map{
+    width:400px;
   }
 
   }
@@ -250,9 +256,9 @@
             </div>
             <br>
             <div>
-              <iframe
+              <iframe class="zmap"
                 src="{{a1['emb_link']}}"
-                width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                 height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
           </div>
         </div>
