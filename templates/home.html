@@ -58,7 +58,7 @@
       font-family: 'Roboto', sans-serif;
       color: #343a40;
     }
-    .nav-link:hover {
+    .nav-link:hover{
       font-size: 1.25rem;
       font-weight: 700;
       font-family: 'Roboto', sans-serif;
@@ -110,6 +110,9 @@
     .modal-content{
       background-color: #343a40;
     }
+    .modal-header{
+      border-bottom: 1px solid #f5f5f5;
+    }
     .modal-title{
       color:#f5f5f5;
     }
@@ -118,6 +121,19 @@
     }
     .close:hover{
       color:#f5f5f5;
+    }
+    .select-district{
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .ruler{
+      margin-top:1rem;
+      margin-bottom: 2rem;
+      border-style: none;
+      border-top-style: dotted;
+      border-color: #343a40;
+      width:25%;
+      border-width: 5px;
     }
 
     .list-group-item:hover {
@@ -154,9 +170,16 @@
       .nav-link{
         font-size: 1.25rem;
       }
+      .nav-link:hover{
+        font-size:1.25rem;
+      }
       .search{
         font-size: 1.25rem;
         margin-left: 10rem;
+      }
+      .ruler{
+        width:10%;
+        border-width:5px;
       }
       #map{
         width:75%;
@@ -173,6 +196,15 @@
       }
     }
   </style>
+  <SCRIPT>
+var d={{d | safe}};
+function MapChange(i) {
+console.log(i);
+console.log(d[i]);
+var m = document.getElementById('map');
+m.src='https://www.google.com/maps/d/u/0/embed?mid=1jPNkN75mJkEJOiM0LcDNIqvLLU-8_LoP';
+}
+</SCRIPT>
 </head>
 
 <body>
@@ -275,16 +307,11 @@
               <span  aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" data-dismiss='modal'>
             <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action select-district">Karimnagar</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Warangal Urban</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Warangal Rural</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Jagityal</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Hyderabad</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Mulugu</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Jogulamba Gadwal</a>
-              <a href="#" class="list-group-item list-group-item-action select-district">Khammam</a>
+              {%for i in di%}
+              <button type="button" class="list-group-item list-group-item-action select-district" onclick="MapChange('{{i}}')">{{di[i]}}</button>
+              {%endfor%}
             </div>
           </div>
         </div>
@@ -294,48 +321,18 @@
       <iframe id="map" scrolling="no" style="border:none;" seamless="seamless" src="https://www.google.co.in/maps/d/u/0/embed?mid=19ks4dONt2QB3Oh5uAO-fceUvKnDPNPJg"></iframe>
     </div>
   </div>
+  <hr class="ruler">
   <div style="text-align: center; margin-bottom: 1rem; font-size: 1.5rem;font-weight: 700;font-family: 'Roboto', sans-serif;color: #343a40;">
-    <h4>View District-wise Testing Centers</h4>
+    <h4>District-wise Testing Centers</h4>
   </div>
   <div class="container-fluid main">
     <div class="list-group list-group-horizontal flex-fill districts">
       <div class="row">
+        {% for i in di%}
         <div class="col-lg-3 col-md-6">
-          <a href="/mlg" class="list-group-item list-group-item-action">Mulugu</a>
+          <a href="/{{i}}" class="list-group-item list-group-item-action">{{di[i]}}</a>
         </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="/kba" class="list-group-item list-group-item-action">Komarambheem Asifabad</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="khm" class="list-group-item list-group-item-action">Khammam</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Mulugu</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Komarambheem Asifabad</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Khammam</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Kamareddy</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Karimnagar</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Kamareddy</a>
-        </div>
-        <div class="col-lg-3  col-md-6">
-          <a href="#" class="list-group-item list-group-item-action">Jogulamba Gadwal</a>
-        </div>
+      {%endfor%}
       </div>
     </div>
   </div>
